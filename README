@@ -1,0 +1,39 @@
+== 获取代码方法
+   $ git clone git://github.com/tzzzoz/doodle.git
+== 初始化工作
+   $ cd doodle   
+   设置个人信息
+   $ git config --global user.name "yourname"
+   $ git config --global user.email youremail
+   添加源
+   $ git remote add doodle git@github.com:tzzzoz/doodle.git
+
+//以上为第一次使用所需要的配置
+== 提交代码设置
+  $ git add .
+  $ git commit -m "你对此次代码提交的描述"
+  $ git push doodle <branch>(默认大家将在master分支)
+   例如： $ git push doodle master
+//以上即可在对内容作出修改后完成提交
+
+
+ps:
+== 各位兄弟提交代码时注意移除一下文件：
+
+   Mac OS X:
+   $ git rm -f *.DS_Store
+
+   Linux NetBeans:
+   $ git rm -rf nbproject
+
+   最后再删除日志文件：
+   $ git rm -rf log
+
+   还有种一劳永逸的方法：
+   $ vi ~/.gitignore
+   内容为：
+   .DS_Store
+   /log
+   /nbproject
+   然后：
+   $ git config --global core.excludesfile ~/.gitignore
